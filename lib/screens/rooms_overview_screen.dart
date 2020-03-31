@@ -56,10 +56,26 @@ import '../widgets/room_index.dart';
 
 class RoomsView extends StatelessWidget {
   final List<Room> roomsList = [
-    Room("CPE 492 | Section 001", "422 (30th Building)","Timestamp: 09:30-09:45 am",),
-    Room("Drawing 100 | Section 06", "401-4 (4th Floor B.)","Timestamp: 13:00-13:15 am",),
-    Room("Algo 361 | Section 008", "402 (30th Building)" ,"Timestamp: 08:00-08:15 am",),
-    Room("OS 305 | Section 009", "512 (30th Building)","Timestamp: 11:00-11:15 am",),
+    Room(
+      "CPE 492 | Section 001",
+      "422 (30th Building)",
+      "Timestamp: 09:30-09:45 am",
+    ),
+    Room(
+      "Drawing 100 | Section 06",
+      "401-4 (4th Floor B.)",
+      "Timestamp: 13:00-13:15 am",
+    ),
+    Room(
+      "Algo 361 | Section 008",
+      "402 (30th Building)",
+      "Timestamp: 08:00-08:15 am",
+    ),
+    Room(
+      "OS 305 | Section 009",
+      "512 (30th Building)",
+      "Timestamp: 11:00-11:15 am",
+    ),
     Room("CPE 25 | Section 001", "Gear47", "Timestamp: 09:30-09:45 am"),
   ];
 
@@ -118,13 +134,22 @@ class RoomsView extends StatelessWidget {
                       style: new TextStyle(fontSize: 16.0),
                     ),
                     Spacer(),
-                    Icon(Icons.check),
+                    Icon(Icons.location_on),
                   ],
                 ),
               )
             ],
           ),
         ),
+      ),
+      decoration: new BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 100.0, // has the effect of softening the shadow
+            spreadRadius: -60.0, // has the effect of extending the shadow
+          )
+        ],
       ),
     );
   }
