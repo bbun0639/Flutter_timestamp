@@ -33,6 +33,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("TS - Timestamp"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[Colors.indigoAccent[400], Colors.blue])),
+        ),
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -51,6 +58,10 @@ class _HomeState extends State<Home> {
               ),
               decoration: BoxDecoration(
                 color: Colors.blue,
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[Colors.indigoAccent[400], Colors.blue]),
               ),
             ),
             ListTile(
