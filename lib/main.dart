@@ -88,24 +88,36 @@
 //   }
 // }
 
-
-
 import 'package:flutter/material.dart';
-import './widgets/room_index.dart';
-import './screens/rooms_overview_screen.dart';
+import 'package:provider/provider.dart';
+
+import './screens/rooms_view_screen.dart';
+import './screens/room_detail_screen.dart';
+import './providers/rooms.dart'; //want to provide data here
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TS - Timestamp',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: Rooms(),
+        ),
+      ],
+
+      child: MaterialApp(
+        title: 'TS - Timestamp',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: RoomsViewScreen(),
+        routes: {
+          RoomDetailScreen.routeName: (ctx) => RoomDetailScreen(),
+        },
+        debugShowCheckedModeBanner: false,
       ),
-      home: Home(),
     );
   }
 }
-

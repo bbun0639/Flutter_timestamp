@@ -1,23 +1,23 @@
 import 'package:flutter/foundation.dart';
 
-class Room {
+class Room with ChangeNotifier{
+  final String id;
   final String title;
-  //final DateTime startDate;
-  //final DateTime endDate;
   // final String subject;
   // final String section;
   final String building;
   final String ts;
-  //final String roomType;
+
 
   //Constructor yo initialize a product
-  Room(
+  Room({
     //use curly brances {} to add arguments as named arguments
-     this.title,
-     //this.startDate,
-     //this.endDate,
-     this.building,
-     this.ts,
-     //this.roomType,    
-  );
+    this.id,
+    this.title,
+    //this.subject,
+    //this.section,
+    this.building,
+    this.ts,
+    
+  });
 }
