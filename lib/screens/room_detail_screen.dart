@@ -22,8 +22,15 @@ class RoomDetailScreen extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text(loadedRoom.title,),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: <Color>[Colors.indigoAccent[400], Colors.blue])),
+        ),
       ),
     );
   }

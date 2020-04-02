@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/rooms_itemBuilder.dart';
-
-
+import '../widgets/app_drawer.dart';
 
 class RoomsViewScreen extends StatelessWidget {
   //final property hold a list of products
@@ -12,11 +11,18 @@ class RoomsViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //automaticallyImplyLeading: false, // Never add back button
-        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: <Color>[Colors.indigoAccent[400], Colors.blue])),
+        ),
         title: Text('TS - Timestamp'),
+        centerTitle: true,
+        //automaticallyImplyLeading: false, // Never add back button
       ),
-      //drawer: AppDrawer(),
+      drawer: AppDrawer(),
       body: RoomsCard(), //don't get as an argument but get itself by provider
     );
   }
