@@ -20,7 +20,7 @@ class RoomItem extends StatelessWidget {
           onTap: () {
             Navigator.of(context)
                 .pushNamed(RoomDetailScreen.routeName, arguments: room.id);
-          },          
+          },
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -29,17 +29,17 @@ class RoomItem extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
                   child: Row(children: <Widget>[
                     Text(
-                      room.title,
+                      room.subject + ' | ' + 'Section ' + room.section,
                       style: new TextStyle(fontSize: 24.0),
                     ),
                     Spacer(),
                   ]),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 40.0),
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Row(children: <Widget>[
                     Text(
-                      room.building,
+                      room.roomNum +' '+ room.building,
                       style: new TextStyle(fontSize: 16.0),
                     ),
                     Spacer(),
@@ -50,11 +50,25 @@ class RoomItem extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Text(
-                        room.ts,
+                        "Timestamp : " + room.ts,
                         style: new TextStyle(fontSize: 16.0),
                       ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                  child: Row(
+                    children: <Widget>[
                       Spacer(),
-                      Icon(Icons.location_on),
+                      Text(
+                        "Timestamp left: 4 minutes ",
+                        style: new TextStyle(
+                            fontSize: 14.0,
+                            color: Color.fromRGBO(255, 0, 0, 80),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Icon(Icons.location_on, color: Color.fromRGBO(0, 100, 255, 80),),
                     ],
                   ),
                 )

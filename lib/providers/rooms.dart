@@ -1,42 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appgit/providers/room.dart';
 
-
 import './room.dart';
 
 class Rooms with ChangeNotifier {
   //ChangeNotifier bc that gives access to a notifyListeners method
   //define a list of product
+
+  //Hard Code room list
   List<Room> _roomsList = [
     Room(
       id: "r1",
-      title: "CPE 492 | Section 001",
-      building: "422 (30th Building)",
-      ts: "Timestamp: 09:30-09:45 am",
+      subject: "CPE 492",
+      section: "001",
+      roomNum: "422",
+      building: "(30th Building)",
+      ts: "09:30-09:45 am",
     ),
     Room(
       id: "r2",
-      title: "Drawing 100 | Section 06",
-      building: "401-4 (4th Floor B.)",
-      ts: "Timestamp: 13:00-13:15 am",
+      subject: "Drawing 100",
+      section: "006",
+      roomNum: "401-4",
+      building: "(4th Floor B.)",
+      ts: "13:00-13:15 am",
     ),
     Room(
       id: "r6",
-      title: "Algo 361 | Section 008",
-      building: "402 (30th Building)",
-      ts: "Timestamp: 08:00-08:15 am",
+      subject: "Algo 361",
+      section: "008",
+      roomNum: "402",
+      building: "(30th Building)",
+      ts: "08:00-08:15 am",
     ),
     Room(
       id: "r4",
-      title: "OS 305 | Section 009",
-      building: "512 (30th Building)",
-      ts: "Timestamp: 11:00-11:15 am",
-    ),
-    Room(
-      id: "r5",
-      title: "CPE 25 | Section 001",
-      building: "Gear47",
-      ts: "Timestamp: 09:30-09:45 am",
+      subject: "OS 305",
+      section: "009",
+      roomNum: "512",
+      building: "(30th Building)",
+      ts: "11:00-11:15 am",
     ),
   ]; //not final list bc it will change over time //direct addr to this list
 
