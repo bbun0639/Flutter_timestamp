@@ -11,7 +11,7 @@ class Rooms with ChangeNotifier {
   List<Room> _roomsList = [
     Room(
       id: "r1",
-      subject: "CPE 492",
+      subject: "CPE492 - Project",
       section: "001",
       roomNum: "422",
       building: "(30th Building)",
@@ -19,7 +19,7 @@ class Rooms with ChangeNotifier {
     ),
     Room(
       id: "r2",
-      subject: "Drawing 100",
+      subject: "Engi Drawing",
       section: "006",
       roomNum: "401-4",
       building: "(4th Floor B.)",
@@ -27,7 +27,7 @@ class Rooms with ChangeNotifier {
     ),
     Room(
       id: "r6",
-      subject: "Algo 361",
+      subject: "CPE361 - Algo",
       section: "008",
       roomNum: "402",
       building: "(30th Building)",
@@ -35,7 +35,7 @@ class Rooms with ChangeNotifier {
     ),
     Room(
       id: "r4",
-      subject: "OS 305",
+      subject: "OS - Operating",
       section: "009",
       roomNum: "512",
       building: "(30th Building)",

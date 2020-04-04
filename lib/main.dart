@@ -91,9 +91,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import './providers/rooms.dart';
+
 import './screens/rooms_view_screen.dart';
-import './screens/room_detail_screen.dart';
-import './providers/rooms.dart'; //want to provide data here
+import './screens/room_detail_screen.dart'; //want to provide data here
+import './screens/signup_screen.dart';
+import './screens/signin_screen.dart';
+import './screens/first_page_screen.dart';
+
+
 
 void main() => runApp(MyApp());
 
@@ -114,6 +120,8 @@ class MyApp extends StatelessWidget {
         home: RoomsViewScreen(),
         routes: {
           RoomDetailScreen.routeName: (ctx) => RoomDetailScreen(),
+          TabSignIn.routeName: (ctx) => TabSignIn(),
+          TabSignUp.routeName: (ctx) => TabSignUp(),
         },
         debugShowCheckedModeBanner: false,
       ),

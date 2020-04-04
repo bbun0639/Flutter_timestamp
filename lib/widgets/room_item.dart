@@ -16,6 +16,9 @@ class RoomItem extends StatelessWidget {
     final room = Provider.of<Room>(context, listen: false);
     return Container(
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
         child: InkWell(
           onTap: () {
             Navigator.of(context)
@@ -36,11 +39,12 @@ class RoomItem extends StatelessWidget {
                   ]),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 30.0),
                   child: Row(children: <Widget>[
                     Text(
-                      room.roomNum +' '+ room.building,
+                      room.roomNum + ' ' + room.building,
                       style: new TextStyle(fontSize: 16.0),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Spacer(),
                   ]),
@@ -53,25 +57,14 @@ class RoomItem extends StatelessWidget {
                         "Timestamp : " + room.ts,
                         style: new TextStyle(fontSize: 16.0),
                       ),
+                      Spacer(),
+                      Icon(
+                        Icons.location_on,
+                        color: Color.fromRGBO(0, 100, 255, 80),
+                      ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                  child: Row(
-                    children: <Widget>[
-                      Spacer(),
-                      Text(
-                        "Timestamp left: 4 minutes ",
-                        style: new TextStyle(
-                            fontSize: 14.0,
-                            color: Color.fromRGBO(255, 0, 0, 80),
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Icon(Icons.location_on, color: Color.fromRGBO(0, 100, 255, 80),),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
@@ -83,7 +76,7 @@ class RoomItem extends StatelessWidget {
           BoxShadow(
             color: Colors.grey,
             blurRadius: 200.0, // has the effect of softening the shadow
-            spreadRadius: -60.0, // has the effect of extending the shadow
+            spreadRadius: -50.0, // has the effect of extending the shadow
           )
         ],
       ),

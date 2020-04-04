@@ -13,10 +13,11 @@ class RoomsViewScreen extends StatelessWidget {
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: <Color>[Colors.indigoAccent[400], Colors.blue])),
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: <Color>[Colors.indigoAccent[400], Colors.blue]),
+          ),
         ),
         title: Text('TS - Timestamp'),
         centerTitle: true,
