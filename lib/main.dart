@@ -24,9 +24,11 @@ class MyApp extends StatelessWidget {
         title: 'TS - Timestamp',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          fontFamily: 'Lato',
         ),
         home: RoomsViewScreen(),
         routes: {
+          RoomsViewScreen.routeName: (ctx) => RoomsViewScreen(),
           RoomDetailScreen.routeName: (ctx) => RoomDetailScreen(),
           SignInState.routeName: (ctx) => SignInState(),
           SignUpState.routeName: (ctx) => SignUpState(),

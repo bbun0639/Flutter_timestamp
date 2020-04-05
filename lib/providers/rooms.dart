@@ -19,7 +19,7 @@ class Rooms with ChangeNotifier {
     ),
     Room(
       id: "r2",
-      subject: "Engi Drawingggggggggggg",
+      subject: "Engi Drawing",
       section: "006",
       roomNum: "401-4",
       building: "(4th Floor B.)",

@@ -7,6 +7,8 @@ class RoomsViewScreen extends StatelessWidget {
   //final property hold a list of products
   //final List<Product> loadedProduct = [];
 
+  static const routeName = '/rooms-view'; 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../screens/sign_up_screen.dart';
+
+import '../screens/rooms_view_screen.dart';
 
 class SignInState extends StatefulWidget {
   final Function toggleView;
@@ -39,6 +42,13 @@ class _SignInState extends State<SignInState>
         headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              leading: IconButton(
+                icon: Icon(Icons.line_style),
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(RoomsViewScreen.routeName);
+                },
+              ),
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -63,7 +73,7 @@ class _SignInState extends State<SignInState>
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      widget.toggleView();
+                      //widget.toggleView();
                       Navigator.of(context)
                           .pushReplacementNamed(SignUpState.routeName);
                     })
@@ -81,7 +91,7 @@ class _SignInState extends State<SignInState>
                 ],
                 controller: _tabController,
               ),
-            )
+            ),
           ];
         },
         body: TabBarView(
@@ -184,6 +194,9 @@ class _UserLogIn extends State<UserLogIn> {
                     // }
                     print(userEmail);
                     print(userPassword);
+
+                    Navigator.of(context)
+                        .pushReplacementNamed(RoomsViewScreen.routeName);
                   },
                 ),
                 SizedBox(height: 12.0),
@@ -222,79 +235,82 @@ class _AdminLogIn extends State<AdminLogIn> {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
-            key: _formKey,
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: 20.0),
-                Image.asset(
-                  'images/logo-bottom.png',
-                  width: 150,
-                  height: 150,
-                ),
-                SizedBox(height: 10.0),
-                TextFormField(
-                    //decoration: textTnputDecoration.copyWith(hintText: 'Email'),
-                    decoration: new InputDecoration(
-                      hintText: 'Admin Email',
-                      icon: new Icon(
-                        Icons.mail,
-                        color: Colors.grey,
-                      ),
+          key: _formKey,
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              Image.asset(
+                'images/logo-bottom.png',
+                width: 150,
+                height: 150,
+              ),
+              SizedBox(height: 10.0),
+              TextFormField(
+                  //decoration: textTnputDecoration.copyWith(hintText: 'Email'),
+                  decoration: new InputDecoration(
+                    hintText: 'Admin Email',
+                    icon: new Icon(
+                      Icons.mail,
+                      color: Colors.grey,
                     ),
-                    validator: (val) => val.isEmpty ? 'Enter an Email' : null,
-                    onChanged: (val) {
-                      setState(() => adminEmail = val);
-                    }),
-                SizedBox(height: 20.0),
-                TextFormField(
-                    //decoration: textTnputDecoration.copyWith(hintText: 'Password'),
-                    decoration: new InputDecoration(
-                      hintText: 'Password',
-                      icon: new Icon(
-                        Icons.lock,
-                        color: Colors.grey,
-                      ),
+                  ),
+                  validator: (val) => val.isEmpty ? 'Enter an Email' : null,
+                  onChanged: (val) {
+                    setState(() => adminEmail = val);
+                  }),
+              SizedBox(height: 20.0),
+              TextFormField(
+                  //decoration: textTnputDecoration.copyWith(hintText: 'Password'),
+                  decoration: new InputDecoration(
+                    hintText: 'Password',
+                    icon: new Icon(
+                      Icons.lock,
+                      color: Colors.grey,
                     ),
-                    validator: (val) => val.length < 6
-                        ? 'Enter a password 6+ chars long'
-                        : null,
-                    obscureText: true,
-                    onChanged: (val) {
-                      setState(() => adminPassword = val);
-                    }),
-                SizedBox(height: 20.0),
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.pink[400],
-                  child: Text(
-                    'Login',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () async {
-                    // if (_formKey.currentState.validate()) {
-                    //   setState(() => loading = true);
-                    //   dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-                    //   print('valid');
-                    //   if (result == null) {
-                    //     setState(() {
-                    //       error = 'Could not sign in with those credentials';
-                    //       loading = false;
-                    //     });
-                    //   }
-                    // }
-                    print(adminEmail);
-                    print(adminPassword);
-                  },
+                  validator: (val) =>
+                      val.length < 6 ? 'Enter a password 6+ chars long' : null,
+                  obscureText: true,
+                  onChanged: (val) {
+                    setState(() => adminPassword = val);
+                  }),
+              SizedBox(height: 20.0),
+              RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
-                SizedBox(height: 12.0),
-                Text(
-                  error,
-                  style: TextStyle(color: Colors.red, fontSize: 14.0),
+                color: Colors.pink[400],
+                child: Text(
+                  'Login',
+                  style: TextStyle(color: Colors.white),
                 ),
-              ],
-            )),
+                onPressed: () async {
+                  // if (_formKey.currentState.validate()) {
+                  //   setState(() => loading = true);
+                  //   dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                  //   print('valid');
+                  //   if (result == null) {
+                  //     setState(() {
+                  //       error = 'Could not sign in with those credentials';
+                  //       loading = false;
+                  //     });
+                  //   }
+                  // }
+                  print(adminEmail);
+                  print(adminPassword);
+
+                  Navigator.of(context)
+                      .pushReplacementNamed(RoomsViewScreen.routeName);
+                },
+              ),
+              SizedBox(height: 12.0),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14.0),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/sign_in_screen.dart';
 
+import '../screens/rooms_view_screen.dart';
+
 class SignUpState extends StatefulWidget {
   final Function toggleView;
   SignUpState({this.toggleView});
@@ -40,6 +42,13 @@ class _SignUpState extends State<SignUpState>
         headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              leading: IconButton(
+                icon: Icon(Icons.line_style),
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(RoomsViewScreen.routeName);
+                },
+              ),
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -64,7 +73,7 @@ class _SignUpState extends State<SignUpState>
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      widget.toggleView();
+                      //widget.toggleView();
                       Navigator.of(context)
                           .pushReplacementNamed(SignInState.routeName);
                     })

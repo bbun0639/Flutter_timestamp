@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/sign_up_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
@@ -37,10 +38,9 @@ class AppDrawer extends StatelessWidget {
                         new Text(
                           'Admin',
                           style: TextStyle(
-                            fontSize: 14.0,
-                            color: Colors.white,
-                            fontStyle: FontStyle.italic
-                          ),
+                              fontSize: 14.0,
+                              color: Colors.white,
+                              fontStyle: FontStyle.italic),
                         ),
                       ],
                     ),
@@ -80,7 +80,23 @@ class AppDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     // Update the state of the app
-                    Navigator.of(context).pushReplacementNamed('/');
+                    Navigator.of(context)
+                        .pushReplacementNamed(RoomsViewScreen.routeName);
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'Room Management',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.storage,
+                    color: Colors.cyan,
+                  ),
+                  onTap: () {
+                    // Update the state of the app
+                    //   Navigator.of(context)
+                    //       .pushReplacementNamed(RoomsViewScreen.routeName);
                   },
                 ),
                 ListTile(
@@ -142,7 +158,14 @@ class AppDrawer extends StatelessWidget {
                         Icons.exit_to_app,
                         color: Colors.indigo,
                       ),
-                      title: Text('Log out'),
+                      onTap: (){
+                        Navigator.of(context)
+                        .pushReplacementNamed(SignInState.routeName);
+                      },
+                      title: Text(
+                        'Log out',
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   ],
                 ),
