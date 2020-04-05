@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appgit/screens/signin_screen.dart';
-import 'package:flutter_appgit/screens/signup_screen.dart';
+import 'package:flutter_appgit/screens/sign_in_screen.dart';
+import 'package:flutter_appgit/screens/sign_up_screen.dart';
+import 'package:flutter_appgit/screens/sign_in_screen.dart';
+import 'package:flutter_appgit/screens/sign_up_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -108,7 +110,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.of(context)
-                        .pushReplacementNamed(TabSignIn.routeName);
+                        .pushReplacementNamed(SignInState.routeName);
                   },
                 ),
                 ListTile(
@@ -122,7 +124,7 @@ class AppDrawer extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.of(context)
-                        .pushReplacementNamed(TabSignUp.routeName);
+                        .pushReplacementNamed(SignUpState.routeName);
                   },
                 ),
               ],

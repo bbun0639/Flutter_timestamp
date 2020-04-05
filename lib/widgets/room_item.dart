@@ -44,7 +44,7 @@ class RoomItem extends StatelessWidget {
                     Text(
                       room.roomNum + ' ' + room.building,
                       style: new TextStyle(fontSize: 16.0),
-                      overflow: TextOverflow.ellipsis,
+                      overflow: TextOverflow.fade,
                     ),
                     Spacer(),
                   ]),
