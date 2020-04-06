@@ -25,7 +25,8 @@ class RoomDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          loadedRoom.subject,
+          //loadedRoom.subject,
+          'TS - Timestamp'
         ),
         centerTitle: true,
         flexibleSpace: Container(

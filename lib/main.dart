@@ -9,6 +9,7 @@ import './screens/room_detail_screen.dart'; //want to provide data here
 import './screens/sign_up_screen.dart';
 import './screens/sign_in_screen.dart';
 import './screens/first_page_screen.dart';
+import './screens/create_room_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           SignInState.routeName: (ctx) => SignInState(),
           SignUpState.routeName: (ctx) => SignUpState(),
           FirstPageState.routeName: (ctx) => FirstPageState(),
+          CreateRoom.routeName: (ctx) => CreateRoom(),
         },
         debugShowCheckedModeBanner: false,
       ),

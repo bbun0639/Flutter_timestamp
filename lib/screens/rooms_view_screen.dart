@@ -49,7 +49,7 @@ class _BottomSheetWidget extends State<BottomSheetWidget> {
             elevation: 4.0,
             backgroundColor: Colors.pink[400],
             icon: const Icon(Icons.add),
-            label: const Text('Create Room'),
+            label: const Text('Join Room'),
             onPressed: () {
               var bottomSheetController = showBottomSheet(
                 context: context,
@@ -72,7 +72,7 @@ class _BottomSheetWidget extends State<BottomSheetWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    height: 200,
+                    height: 180,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -98,7 +98,7 @@ class _BottomSheetWidget extends State<BottomSheetWidget> {
   }
 }
 
-//<-------------------------------------------------------------->
+//<-------------------------TextFieldBox----------------------------->
 
 class DecoratedTextField extends StatelessWidget {
   @override
@@ -107,7 +107,8 @@ class DecoratedTextField extends StatelessWidget {
       height: 68,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
-      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 23),
+      //margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(
           color: Colors.grey[300], borderRadius: BorderRadius.circular(15)),
       child: Column(
@@ -142,7 +143,7 @@ class _SheetButtonState extends State<SheetButton> {
       },
       child: Text(
         'Join',
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.white, fontSize: 15),
       ),
     );
   }

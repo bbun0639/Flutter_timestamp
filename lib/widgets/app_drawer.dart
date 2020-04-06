@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_appgit/screens/first_page_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
-import 'package:flutter_appgit/screens/sign_up_screen.dart';
-import 'package:flutter_appgit/screens/sign_in_screen.dart';
-import 'package:flutter_appgit/screens/sign_up_screen.dart';
+import 'package:flutter_appgit/screens/create_room_screen.dart';
+
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -110,10 +109,7 @@ class AppDrawer extends StatelessWidget {
                     color: Colors.yellow[700],
                   ),
                   onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    //Navigator.pop(context);
+//
                   },
                 ),
                 ListTile(
@@ -132,20 +128,6 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    'SignUp',
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                  leading: Icon(
-                    Icons.people,
-                    color: Colors.red[700],
-                  ),
-                  onTap: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(SignUpState.routeName);
-                  },
-                ),
-                ListTile(
-                  title: Text(
                     '1st-Page',
                     style: TextStyle(fontSize: 16.0),
                   ),
@@ -158,6 +140,21 @@ class AppDrawer extends StatelessWidget {
                         .pushReplacementNamed(FirstPageState.routeName);
                   },
                 ),
+                ListTile(
+                  title: Text(
+                    'Create Room',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.create_new_folder,
+                    color: Colors.red[700],
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(CreateRoom.routeName);
+                  },
+                ),
+                
               ],
             ),
           ),
