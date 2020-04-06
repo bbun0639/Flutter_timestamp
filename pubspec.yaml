@@ -50,6 +50,7 @@ flutter:
   - images/logo-white.png
   - images/logo-dark.png
   - images/logo-bottom.png
+  - images/header.png
 
 
   # To add assets to your application, add an assets section, like this:

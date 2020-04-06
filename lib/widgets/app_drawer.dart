@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appgit/screens/first_page_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/sign_up_screen.dart';
@@ -66,7 +67,7 @@ class AppDrawer extends StatelessWidget {
                     // Update the state of the app
                     // ...
                     // Then close the drawer
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   },
                 ),
                 ListTile(
@@ -112,7 +113,7 @@ class AppDrawer extends StatelessWidget {
                     // Update the state of the app
                     // ...
                     // Then close the drawer
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   },
                 ),
                 ListTile(
@@ -141,6 +142,20 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context)
                         .pushReplacementNamed(SignUpState.routeName);
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    '1st-Page',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.flag,
+                    color: Colors.greenAccent[700],
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(FirstPageState.routeName);
                   },
                 ),
               ],
@@ -185,7 +200,7 @@ void gradientAppbar() {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: <Color>[Colors.indigoAccent[400], Colors.blue])),
+              colors: <Color>[Colors.indigoAccent[400], Colors.red])),
     ),
     //automaticallyImplyLeading: false, // Never add back button
     centerTitle: true,

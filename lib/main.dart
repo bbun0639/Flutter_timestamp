@@ -8,6 +8,7 @@ import './screens/rooms_view_screen.dart';
 import './screens/room_detail_screen.dart'; //want to provide data here
 import './screens/sign_up_screen.dart';
 import './screens/sign_in_screen.dart';
+import './screens/first_page_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,12 +27,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           fontFamily: 'Lato',
         ),
-        home: RoomsViewScreen(),
+        home: SignInState(),
         routes: {
           RoomsViewScreen.routeName: (ctx) => RoomsViewScreen(),
           RoomDetailScreen.routeName: (ctx) => RoomDetailScreen(),
           SignInState.routeName: (ctx) => SignInState(),
           SignUpState.routeName: (ctx) => SignUpState(),
+          FirstPageState.routeName: (ctx) => FirstPageState(),
         },
         debugShowCheckedModeBanner: false,
       ),
