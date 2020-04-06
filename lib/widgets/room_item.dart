@@ -16,6 +16,7 @@ class RoomItem extends StatelessWidget {
     final room = Provider.of<Room>(context, listen: false);
     return Container(
       child: Card(
+        elevation: 6.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
@@ -70,16 +71,7 @@ class RoomItem extends StatelessWidget {
           ),
         ),
       ),
-      decoration: new BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 200.0, // has the effect of softening the shadow
-            spreadRadius: -50.0, // has the effect of extending the shadow
-          )
-        ],
-      ),
+      
     );
   }
 }

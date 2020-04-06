@@ -45,6 +45,7 @@ class RoomDetailScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Card(
+                    elevation: 6.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
@@ -138,29 +139,16 @@ class RoomDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  decoration: new BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey[600],
-                        blurRadius:
-                            100.0, // has the effect of softening the shadow
-                        spreadRadius:
-                            -50.0, // has the effect of extending the shadow
-                      ),
-                    ],
-                  ),
+                  
                 ),
-                SizedBox(height: 5),
                 Expanded(
                   child: GridView.count(
-                    crossAxisCount: 3,
+                    crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                     children: <Widget>[
-                      MenuIcon(Icons.home, 'Home', Colors.deepOrange),
-                      MenuIcon(Icons.filter_center_focus, 'Timestamp', Colors.lightBlue),
-                      MenuIcon(Icons.event_note, 'Report', Colors.yellow),
+                      MenuIcon(Icons.filter_center_focus, 'Timestamp', Colors.blue),
+                      MenuIcon(Icons.event_note, 'Report', Colors.red),
                     ],
                   ),
                 ),
@@ -182,9 +170,10 @@ class MenuIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var index = 700;
+    var index = 600;
         return Card(
-          margin: EdgeInsets.all(15),
+          elevation: 4.0,
+          margin: EdgeInsets.all(30),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),
@@ -196,7 +185,7 @@ class MenuIcon extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     _icon,
-                    size: 35.0,
+                    size: 50.0,
                     color: _color[index],
               ),
               Padding(
