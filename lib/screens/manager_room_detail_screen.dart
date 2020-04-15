@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appgit/widgets/app_drawer.dart';
-import 'package:provider/provider.dart';
 
-import '../providers/rooms.dart';
 
 class ManagerRoomDetailScreen extends StatefulWidget {
   @override
@@ -14,19 +12,10 @@ class ManagerRoomDetailScreen extends StatefulWidget {
 class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    // final roomId =
-    //     ModalRoute.of(context).settings.arguments as String; // is the id!
-    // final loadedRoom = Provider.of<Rooms>(context, listen: false)
-    //     .findById(roomId); //which product was loaded**
-    //**default is true - this widget of this page will not rebuild if notifyListeners is called = use data at one time (not active listener)
-    //.items //context channels to use provider //get we know we get 'items' there
-    //.firstWhere((roo) => roo.id == roomId); //'firstWhere' to get specific ID //if ID of the product I'm looking at is equal to the productID ,got here to my route
-
+    
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            //loadedRoom.subject,
-            'TS - Timestamp'),
+        title: Text('TS - Timestamp'),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -41,7 +30,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
       body: SafeArea(
         child: Container(
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.only(left: 10, right: 10, top: 10),
             child: Column(
               children: <Widget>[
                 Container(
@@ -61,7 +50,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Text(
                                 'TEST DETAILS',
                                 style: new TextStyle(
-                                    fontSize: 30.0,
+                                    fontSize: 26.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Spacer(),
@@ -74,12 +63,12 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Text(
                                 'Section: ',
                                 style: new TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '001',
-                                style: new TextStyle(fontSize: 18.0),
+                                style: new TextStyle(fontSize: 16.0),
                               ),
                               Spacer(),
                             ]),
@@ -91,12 +80,12 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Text(
                                 'Room: ',
                                 style: new TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '422 TEST',
-                                style: new TextStyle(fontSize: 18.0),
+                                style: new TextStyle(fontSize: 16.0),
                               ),
                               Spacer(),
                             ]),
@@ -108,12 +97,12 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Text(
                                 'Buildng: ',
                                 style: new TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '30th Building',
-                                style: new TextStyle(fontSize: 18.0),
+                                style: new TextStyle(fontSize: 16.0),
                               ),
                               Spacer(),
                             ]),
@@ -126,12 +115,12 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                                 Text(
                                   'Timestamp: ',
                                   style: new TextStyle(
-                                      fontSize: 18.0,
+                                      fontSize: 16.0,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  '00:00am',
-                                  style: new TextStyle(fontSize: 18.0),
+                                  'DateTime not set',
+                                  style: new TextStyle(fontSize: 16.0,color: Colors.red),
                                 ),
                               ],
                             ),
@@ -147,16 +136,18 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                     //crossAxisSpacing: 10,
                     //mainAxisSpacing: 10,
                     children: <Widget>[
-                      MenuIcon(Icons.edit, 'Set Time', Colors.blue, 'Set the time for the timestamp'),
-                      MenuIcon(Icons.code, 'Room Code', Colors.amber, 'Share code to invite people into this room'),
-                      MenuIcon(Icons.people, 'Users', Colors.green, 'See all user in this room'),
-                      MenuIcon(Icons.event_note, 'Report', Colors.red, 'The reported sheet of every user'),
+                      MenuIcon(Icons.query_builder, 'Setting Time', Colors.blue, 'Set the time for the timestamp'),
+                      MenuIcon(Icons.vpn_key, 'Room Key', Colors.red, 'Share code to invite people into this room'),
+                      MenuIcon(Icons.people, 'Users', Colors.teal, 'See all user in this room'),
+                      MenuIcon(Icons.assignment, 'Report', Colors.amber, 'The reported sheet of every user'),
                     ],
                   ),
                 ),
               ],
             ),
           ),
+
+          
         ),
       ),
     );

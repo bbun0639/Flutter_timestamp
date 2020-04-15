@@ -47,7 +47,7 @@ class _KeyRoom extends State<KeyRoom> {
                             Padding(padding: EdgeInsets.all(10)),
                             Center(
                               child: Text(
-                                "Code Room",
+                                "Room Key",
                                 style: TextStyle(
                                     fontSize: 26, fontWeight: FontWeight.bold),
                               ),

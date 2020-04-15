@@ -152,7 +152,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    'Generate Key',
+                    'Room Key',
                     style: TextStyle(fontSize: 16.0),
                   ),
                   leading: Icon(
