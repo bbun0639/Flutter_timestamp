@@ -107,24 +107,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Spacer(),
                             ]),
                           ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(top: 8.0, bottom: 0.0),
-                            child: Row(
-                              children: <Widget>[
-                                Text(
-                                  'Timestamp: ',
-                                  style: new TextStyle(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  'DateTime not set',
-                                  style: new TextStyle(fontSize: 16.0,color: Colors.red),
-                                ),
-                              ],
-                            ),
-                          )
+                          
                         ],
                       ),
                     ),
@@ -136,7 +119,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                     //crossAxisSpacing: 10,
                     //mainAxisSpacing: 10,
                     children: <Widget>[
-                      MenuIcon(Icons.query_builder, 'Setting Time', Colors.blue, 'Set the time for the timestamp'),
+                      MenuIcon(Icons.update, 'Setting Time', Colors.blue, 'Set the time schedule'),
                       MenuIcon(Icons.vpn_key, 'Room Key', Colors.red, 'Share code to invite people into this room'),
                       MenuIcon(Icons.people, 'Users', Colors.teal, 'See all user in this room'),
                       MenuIcon(Icons.assignment, 'Report', Colors.amber, 'The reported sheet of every user'),
@@ -146,13 +129,14 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
               ],
             ),
           ),
-
-          
         ),
       ),
     );
   }
 }
+
+
+
 
 class MenuIcon extends StatelessWidget {
   final IconData _icon;
