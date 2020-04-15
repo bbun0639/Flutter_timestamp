@@ -120,7 +120,7 @@ class _CrateRoom extends State<CreateRoom> {
                 //<------------------------------------------------------------------------------>
 
                 Padding(
-                  padding: const EdgeInsets.only(bottom:20),
+                  padding: const EdgeInsets.only(bottom:30),
                   child: Container(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -318,7 +318,7 @@ class _CrateRoom extends State<CreateRoom> {
                   ),
                   color: Colors.pink[400],
                   child: Text(
-                    '  Submit  ',
+                    '          Submit        ',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   onPressed: () async {},

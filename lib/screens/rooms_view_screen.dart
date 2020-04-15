@@ -28,7 +28,7 @@ class RoomsViewScreen extends StatelessWidget {
       drawer: AppDrawer(),
       body: RoomsCard(), //don't get as an argument but get itself by provider
       floatingActionButton: BottomSheetWidget(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
