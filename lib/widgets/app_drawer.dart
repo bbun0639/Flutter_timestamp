@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appgit/screens/empty_room_screen.dart';
 import 'package:flutter_appgit/screens/first_page_screen.dart';
+import 'package:flutter_appgit/screens/key_room_screen.dart';
+import 'package:flutter_appgit/screens/manager_room_detail_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/create_room_screen.dart';
-import 'package:flutter_appgit/screens/take_face_screen.dart';
-
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -64,9 +64,7 @@ class AppDrawer extends StatelessWidget {
                     Icons.dashboard,
                     color: Colors.red[400],
                   ),
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                 ),
                 ListTile(
                   title: Text(
@@ -93,8 +91,8 @@ class AppDrawer extends StatelessWidget {
                     color: Colors.cyan,
                   ),
                   onTap: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed(EmptyRoom.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(EmptyRoom.routeName);
                   },
                 ),
                 ListTile(
@@ -107,7 +105,7 @@ class AppDrawer extends StatelessWidget {
                     color: Colors.yellow[700],
                   ),
                   onTap: () {
-//
+                    //
                   },
                 ),
                 ListTile(
@@ -154,19 +152,32 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    'Create Room',
+                    'Generate Key',
                     style: TextStyle(fontSize: 16.0),
                   ),
                   leading: Icon(
-                    Icons.camera_alt,
-                    color: Colors.red[700],
+                    Icons.vpn_key,
+                    color: Colors.deepOrange,
                   ),
                   onTap: () {
                     Navigator.of(context)
-                        .pushReplacementNamed(TakeFaceState.routeName);
+                        .pushReplacementNamed(KeyRoom.routeName);
                   },
                 ),
-                
+                ListTile(
+                  title: Text(
+                    'Management Detail Room',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.link,
+                    color: Colors.cyan,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(
+                        ManagerRoomDetailScreen.routeName);
+                  },
+                ),
               ],
             ),
           ),
@@ -182,9 +193,9 @@ class AppDrawer extends StatelessWidget {
                         Icons.exit_to_app,
                         color: Colors.indigo,
                       ),
-                      onTap: (){
+                      onTap: () {
                         Navigator.of(context)
-                        .pushReplacementNamed(SignInState.routeName);
+                            .pushReplacementNamed(SignInState.routeName);
                       },
                       title: Text(
                         'Log out',

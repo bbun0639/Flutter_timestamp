@@ -41,9 +41,10 @@ class _EmptyRoom extends State<EmptyRoom> {
                 width: 200,
               ),
               Text(
-                'You don' + "'" + 't have any room yet, \nPlease **create//join** the room',
-                style: TextStyle(fontSize: 16),
+                'You don' + "'" + 't have any room, \nPlease **create//join** the room.',
+                style: TextStyle(fontSize: 16, color: Colors.grey),
                 textAlign: TextAlign.center,
+                
               ),
             ],
           ),

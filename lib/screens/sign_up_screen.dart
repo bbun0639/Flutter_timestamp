@@ -137,13 +137,13 @@ class _UserSignUp extends State<UserSignUp> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 20.0),
+                SizedBox(height: 70.0),
                   Image.asset(
                     'images/logo-bottom.png',
                     width: 150,
                     height: 150,
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 20.0),
                   TextFormField(
                     //decoration: textTnputDecoration.copyWith(hintText: 'Email'),
                     decoration: new InputDecoration(
@@ -258,7 +258,7 @@ class _AdminSignUp extends State<AdminSignUp> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 70.0),
                   Image.asset(
                     'images/logo-bottom.png',
                     width: 150,

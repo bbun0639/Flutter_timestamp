@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appgit/screens/empty_room_screen.dart';
-import 'package:flutter_appgit/screens/sign_up_screen.dart';
 import 'package:provider/provider.dart';
 
 import './providers/rooms.dart';
@@ -12,6 +10,9 @@ import './screens/sign_in_screen.dart';
 import './screens/first_page_screen.dart';
 import './screens/create_room_screen.dart';
 import './screens/take_face_screen.dart';
+import './screens/empty_room_screen.dart';
+import './screens/key_room_screen.dart';
+import './screens/manager_room_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +43,8 @@ class MyApp extends StatelessWidget {
           CreateRoom.routeName: (ctx) => CreateRoom(),
           TakeFaceState.routeName: (ctx) => TakeFaceState(),
           EmptyRoom.routeName: (ctx) => EmptyRoom(),
+          KeyRoom.routeName: (ctx) => KeyRoom(),
+          ManagerRoomDetailScreen.routeName: (ctx) => ManagerRoomDetailScreen(),
         },
         debugShowCheckedModeBanner: false,
       ),

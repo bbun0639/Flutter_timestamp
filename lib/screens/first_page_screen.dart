@@ -84,7 +84,7 @@ class _FirstPageState extends State<FirstPageState> {
                               Padding(
                                 padding: EdgeInsets.all(5),
                               ),
-                              SizedBox(height: 10.0),
+                              SizedBox(height: 5.0),
                               TextFormField(
                                 decoration: new InputDecoration(
                                     hintText: 'Full Name',
