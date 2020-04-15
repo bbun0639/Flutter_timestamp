@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../widgets/app_drawer.dart';
 
-import '../screens/take_face_screen.dart';
+import '../screens/rooms_view_screen.dart';
 
-class FirstPageState extends StatefulWidget {
+class TakeFaceState extends StatefulWidget {
   @override
-  _FirstPageState createState() => _FirstPageState();
+  _TakeFaceState createState() => _TakeFaceState();
 
-  static const routeName = '/1st-page';
+  static const routeName = '/take-camera-page';
 
   final String FullName = '';
 }
 
-class _FirstPageState extends State<FirstPageState> {
+class _TakeFaceState extends State<TakeFaceState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +36,14 @@ class _FirstPageState extends State<FirstPageState> {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            './images/1st-header.png',
+            './images/2nd-header.png',
             fit: BoxFit.fitWidth,
           ),
+          Text("Hello, Earth!",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                  color: Colors.black)),
           Center(
             child: Container(
               height: 260.0,
@@ -56,45 +61,39 @@ class _FirstPageState extends State<FirstPageState> {
                       Padding(padding: EdgeInsets.all(10)),
                       Center(
                         child: Text(
-                          "STEP 1",
+                          "STEP 2",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.all(10)),
+                      Padding(padding: EdgeInsets.all(5)),
                       Center(
                         child: Text(
-                          "Please enter your name",
+                          "Please take the photo",
                           style: TextStyle(fontSize: 20),
                         ),
                       ),
                       Padding(padding: EdgeInsets.all(5)),
                       Center(
                         child: Text(
-                          "The app will collect data in the first time",
+                          "This term for face recognition service",
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 5.0, horizontal: 30.0),
-                        child: Form(
-                          child: Column(
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(5),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                decoration: new InputDecoration(
-                                    hintText: 'Full Name',
-                                    icon: new Icon(Icons.person)),
-                              ),
-                            ],
-                          ),
+                      Padding(padding: EdgeInsets.all(10)),
+                      Center(
+                        child: Text(
+                          "1.เลือกมุมถ่ายภาพที่มีแสงสว่าง",
+                          style: TextStyle(fontSize: 16),
                         ),
                       ),
-                      // Padding(padding: EdgeInsets.only(left: 120.0)),
+                      Padding(padding: EdgeInsets.all(5)),
+                      Center(
+                        child: Text(
+                          "2.จัดใบหน้าให้ตรงและอยู่ในกรอบถ่ายภาพ",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -107,20 +106,28 @@ class _FirstPageState extends State<FirstPageState> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(padding: EdgeInsets.only(top: 220.0)),
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(TakeFaceState.routeName);
-                    print('Submit Pressed');
-                  },
-                  color: Colors.pink[400],
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(30.0)),
-                  child: new Text('Next',
-                      style: new TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold)),
+                SizedBox.fromSize(
+                  size: Size(56, 56),
+                  child: ClipOval(
+                    child: Material(
+                      color: Colors.pink[400],
+                      child: InkWell(
+                        splashColor: Colors.pink[50],
+                        onTap: () {
+                          //pressed
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                            ), // icon
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

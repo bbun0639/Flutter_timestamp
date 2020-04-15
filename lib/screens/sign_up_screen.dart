@@ -78,29 +78,30 @@ class _SignUpState extends State<SignUpState>
                           .pushReplacementNamed(SignInState.routeName);
                     })
               ],
-              bottom: TabBar(
-                tabs: <Widget>[
-                  Tab(
-                    text: "User",
-                    icon: Icon(Icons.person, size: 30),
-                  ),
-                  Tab(
-                    text: "Admin",
-                    icon: Icon(Icons.person_pin, size: 30),
-                  )
-                ],
-                controller: _tabController,
-              ),
+              // bottom: TabBar(
+              //   tabs: <Widget>[
+              //     Tab(
+              //       text: "User",
+              //       icon: Icon(Icons.person, size: 30),
+              //     ),
+              //     Tab(
+              //       text: "Admin",
+              //       icon: Icon(Icons.person_pin, size: 30),
+              //     )
+              //   ],
+              //   controller: _tabController,
+              // ),
             )
           ];
         },
-        body: TabBarView(
-          children: <Widget>[
-            UserSignUp(),
-            AdminSignUp(),
-          ],
-          controller: _tabController,
-        ),
+        // body: TabBarView(
+        //   children: <Widget>[
+        //     UserSignUp(),
+        //     AdminSignUp(),
+        //   ],
+        //   controller: _tabController,
+        // ),
+        body: AdminSignUp(),
       ),
     );
   }

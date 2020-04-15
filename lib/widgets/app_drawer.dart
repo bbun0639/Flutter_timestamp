@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appgit/screens/empty_room_screen.dart';
 import 'package:flutter_appgit/screens/first_page_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/create_room_screen.dart';
+import 'package:flutter_appgit/screens/take_face_screen.dart';
 
 
 class AppDrawer extends StatelessWidget {
@@ -29,14 +31,14 @@ class AppDrawer extends StatelessWidget {
                           height: 80.0,
                         ),
                         new Text(
-                          'User01@gmail.com',
+                          'pathomphob.sun@gmail.com',
                           style: TextStyle(
                             fontSize: 16.0,
                             color: Colors.white,
                           ),
                         ),
                         new Text(
-                          'Admin',
+                          'User',
                           style: TextStyle(
                               fontSize: 14.0,
                               color: Colors.white,
@@ -63,10 +65,7 @@ class AppDrawer extends StatelessWidget {
                     color: Colors.red[400],
                   ),
                   onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    //Navigator.pop(context);
+
                   },
                 ),
                 ListTile(
@@ -94,9 +93,8 @@ class AppDrawer extends StatelessWidget {
                     color: Colors.cyan,
                   ),
                   onTap: () {
-                    // Update the state of the app
-                    //   Navigator.of(context)
-                    //       .pushReplacementNamed(RoomsViewScreen.routeName);
+                      Navigator.of(context)
+                          .pushReplacementNamed(EmptyRoom.routeName);
                   },
                 ),
                 ListTile(
@@ -152,6 +150,20 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context)
                         .pushReplacementNamed(CreateRoom.routeName);
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'Create Room',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.camera_alt,
+                    color: Colors.red[700],
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(TakeFaceState.routeName);
                   },
                 ),
                 

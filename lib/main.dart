@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appgit/screens/empty_room_screen.dart';
 import 'package:flutter_appgit/screens/sign_up_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,7 @@ import './screens/sign_up_screen.dart';
 import './screens/sign_in_screen.dart';
 import './screens/first_page_screen.dart';
 import './screens/create_room_screen.dart';
+import './screens/take_face_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
           SignUpState.routeName: (ctx) => SignUpState(),
           FirstPageState.routeName: (ctx) => FirstPageState(),
           CreateRoom.routeName: (ctx) => CreateRoom(),
+          TakeFaceState.routeName: (ctx) => TakeFaceState(),
+          EmptyRoom.routeName: (ctx) => EmptyRoom(),
         },
         debugShowCheckedModeBanner: false,
       ),
