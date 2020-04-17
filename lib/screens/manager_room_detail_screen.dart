@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appgit/widgets/app_drawer.dart';
 
+import 'package:f_datetimerangepicker/f_datetimerangepicker.dart';
+
 class ManagerRoomDetailScreen extends StatefulWidget {
   @override
   _ManagerRoomDetailScreen createState() => _ManagerRoomDetailScreen();
@@ -105,6 +107,23 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                               Spacer(),
                             ]),
                           ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                            child: Row(children: <Widget>[
+                              Text(
+                                'TS at: ',
+                                style: new TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "...",
+                                style: new TextStyle(fontSize: 16.0),
+                              ),
+                              Spacer(),
+                            ]),
+                          ),
                         ],
                       ),
                     ),
@@ -124,7 +143,28 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                           borderRadius: BorderRadius.circular(15.0),
                         ),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            DateTimeRangePicker(
+                                startText: "Start",
+                                endText: "End",
+                                doneText: "Yes",
+                                cancelText: "Cancel",
+                                interval: 5,
+                                initialStartTime: DateTime.now(),
+                                initialEndTime: DateTime.now()
+                                    .add(Duration(days: 0, hours: 1)),
+                                mode: DateTimeRangePickerMode.dateAndTime,
+                                // minimumTime:
+                                //     DateTime.now().subtract(Duration(days: 1)),
+                                // maximumTime:
+                                //     DateTime.now().add(Duration(days: 25)),
+                                onConfirm: (start, end) {
+                                  print(start);
+                                  print(end);
+                                  Navigator.of(context).pushReplacementNamed(
+                                      ManagerRoomDetailScreen.routeName);
+                                }).showPicker(context);
+                          },
                           child: Column(
                             children: <Widget>[
                               Padding(
@@ -159,9 +199,10 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                                           fontSize: 22.0,
                                         ),
                                       ),
-                                      Text('Set the time schedule',
-                                          style:
-                                              TextStyle(color: Colors.black45)),
+                                      Text(
+                                        'Set the time schedule',
+                                        style: TextStyle(color: Colors.black45),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -270,8 +311,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                                           fontSize: 22.0,
                                         ),
                                       ),
-                                      Text(
-                                          'See all user in this room',
+                                      Text('See all user in this room',
                                           style:
                                               TextStyle(color: Colors.black45)),
                                     ],
@@ -337,6 +377,7 @@ class _ManagerRoomDetailScreen extends State<ManagerRoomDetailScreen> {
                           ),
                         ),
                       ),
+                      
                       // MenuIcon(Icons.update, 'Setting Time', Colors.blue,
                       //     'Set the time schedule'),
                       // MenuIcon(Icons.vpn_key, 'Room Key', Colors.red,
