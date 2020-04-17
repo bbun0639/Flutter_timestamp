@@ -65,8 +65,8 @@ class _BottomSheetWidget extends State<BottomSheetWidget> {
             },
           )
         : Container(
-            margin: const EdgeInsets.only(top: 5, left: 30, right: 30),
-            height: 200,
+            margin: const EdgeInsets.only(top: 5, left: 30, right: 0),
+            height: 180,
             child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

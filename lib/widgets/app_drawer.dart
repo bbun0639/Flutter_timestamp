@@ -6,6 +6,7 @@ import 'package:flutter_appgit/screens/manager_room_detail_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/create_room_screen.dart';
+import 'package:flutter_appgit/screens/time_list_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -176,6 +177,20 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed(
                         ManagerRoomDetailScreen.routeName);
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'Time List',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.timeline,
+                    color: Colors.blueGrey,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(
+                        TimeList.routeName);
                   },
                 ),
               ],
