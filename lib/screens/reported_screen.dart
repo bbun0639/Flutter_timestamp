@@ -10,12 +10,13 @@ class UserReport extends StatefulWidget {
 }
 
 class _UserReport extends State<UserReport> {
+  var dtr = DataTableReport();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'TS - Timestamp',
+          'Report',
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -28,47 +29,46 @@ class _UserReport extends State<UserReport> {
         ),
       ),
       drawer: AppDrawer(),
-      body: ListView(
-        children: <Widget>[
-          SizedBox(height: 10.0),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              'Reported',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue[900]),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Center(
+            child: PaginatedDataTable(
+              header: Text("CPE101 | Sec 001"),
+              columns: [
+                DataColumn(label: Text('Name')),
+                DataColumn(label: Text('Status')),
+              ],
+              source: dtr,
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0),
-            child: Card(
-              elevation: 6,
-              child: DataTable(
-                columns: [
-                  DataColumn(label: Text('Name')),
-                  DataColumn(label: Text('Status')),
-                ],
-                rows: [
-                  DataRow(cells: [
-                    DataCell(Text('Pitakarn')),
-                    DataCell(Text("Yes")),
-                  ]),
-                  DataRow(cells: [
-                    DataCell(Text('Pathomphob')),
-                    DataCell(Text("Yes")),
-                  ]),
-                  DataRow(cells: [
-                    DataCell(Text('Fluke kung')),
-                    DataCell(Text("No")),
-                  ]),
-                ],
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
+}
+
+class DataTableReport extends DataTableSource {
+  //final List<User> _reports = reports;
+
+  //final User report = _reports[index];
+
+  @override
+  DataRow getRow(int index) {
+    return DataRow.byIndex(index: index, cells: [
+      DataCell(Text("cell$index")), //Column Name
+      DataCell(Text("cell$index")), //Column Status
+      // DataCell(Text(report.name)), 
+      // DataCell(Text(report.status)),
+    ]);
+  }
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get rowCount => 100; //จำนวน list ทั้งหมด // _dataFill.length;
+
+  @override
+  int get selectedRowCount => 0; //false
 }
