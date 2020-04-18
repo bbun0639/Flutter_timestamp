@@ -14,6 +14,7 @@ import './screens/empty_room_screen.dart';
 import './screens/key_room_screen.dart';
 import './screens/manager_room_detail_screen.dart';
 import './screens/time_list_screen.dart';
+import './screens/reported_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           fontFamily: 'Lato',
           bottomSheetTheme: BottomSheetThemeData(
-            backgroundColor: Colors.black.withOpacity(1)),
+              backgroundColor: Colors.black.withOpacity(1)),
         ),
         home: SignInState(),
         routes: {
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
           KeyRoom.routeName: (ctx) => KeyRoom(),
           ManagerRoomDetailScreen.routeName: (ctx) => ManagerRoomDetailScreen(),
           TimeList.routeName: (ctx) => TimeList(),
+          UserReport.routeName: (ctx) => UserReport(),
         },
         debugShowCheckedModeBanner: false,
       ),

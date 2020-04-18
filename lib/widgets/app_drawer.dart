@@ -3,6 +3,7 @@ import 'package:flutter_appgit/screens/empty_room_screen.dart';
 import 'package:flutter_appgit/screens/first_page_screen.dart';
 import 'package:flutter_appgit/screens/key_room_screen.dart';
 import 'package:flutter_appgit/screens/manager_room_detail_screen.dart';
+import 'package:flutter_appgit/screens/reported_screen.dart';
 import 'package:flutter_appgit/screens/rooms_view_screen.dart';
 import 'package:flutter_appgit/screens/sign_in_screen.dart';
 import 'package:flutter_appgit/screens/create_room_screen.dart';
@@ -191,6 +192,20 @@ class AppDrawer extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pushReplacementNamed(
                         TimeList.routeName);
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'User Report',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  leading: Icon(
+                    Icons.list,
+                    color: Colors.blueGrey,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed(
+                        UserReport.routeName);
                   },
                 ),
               ],
